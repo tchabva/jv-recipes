@@ -1,9 +1,6 @@
 package org.northcoders.Entities;
 
 import jakarta.persistence.*;
-import org.northcoders.Entities.Enums.RatingValue;
-
-import java.util.Date;
 
 @Entity
 public class Rating {
@@ -17,7 +14,7 @@ public class Rating {
 
     Recipe associatedRecipe;
 
-    User rater;
+    Person rater;
 
     public Rating() {
     }

@@ -4,11 +4,7 @@ import jakarta.persistence.*;
 import org.jetbrains.annotations.NotNull;
 import org.northcoders.Entities.Enums.Difficulty;
 
-import java.util.Date;
-import java.util.List;
 import java.util.Set;
-
-import static jakarta.persistence.FetchType.LAZY;
 
 @Entity
 public class Recipe {
@@ -16,7 +12,6 @@ public class Recipe {
     @GeneratedValue
     Long id;
 
-    @NotNull
     String title;
 
     String description;
@@ -37,7 +32,7 @@ public class Recipe {
 
     Set<Category> listOfCategories;
 
-    User creator;
+    Person creator;
 
     String dateCreated;
 

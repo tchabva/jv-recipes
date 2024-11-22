@@ -4,8 +4,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
-import java.util.Date;
-
 @Entity
 public class Comment {
     @Id
@@ -16,7 +14,7 @@ public class Comment {
 
     String datePosted;
 
-    User author;
+    Person author;
 
     Recipe associatedRecipe;
 
