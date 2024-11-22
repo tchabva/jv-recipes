@@ -1,12 +1,9 @@
 package org.northcoders.Entities;
 
 import jakarta.persistence.*;
-import org.northcoders.Entities.Enums.Role;
-
-import java.util.Date;
 
 @Entity
-public class User {
+public class Person {
     @Id
     @GeneratedValue
     Long id;
@@ -21,6 +18,6 @@ public class User {
 
     String dateRegistered;
 
-    public User() {
+    public Person() {
     }
 }
