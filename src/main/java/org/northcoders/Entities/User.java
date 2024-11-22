@@ -1,8 +1,6 @@
 package org.northcoders.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.northcoders.Entities.Enums.Role;
 
 import java.util.Date;
@@ -19,9 +17,9 @@ public class User {
 
     String password;
 
-    Role role;
+    String role;
 
-    Date date;
+    String dateRegistered;
 
     public User() {
     }

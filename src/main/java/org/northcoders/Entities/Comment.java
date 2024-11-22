@@ -14,7 +14,7 @@ public class Comment {
 
     String text;
 
-    Date datePosted;
+    String datePosted;
 
     User author;
 

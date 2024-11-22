@@ -1,8 +1,6 @@
 package org.northcoders.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import org.northcoders.Entities.Enums.RatingValue;
 
 import java.util.Date;
@@ -13,9 +11,9 @@ public class Rating {
     @GeneratedValue
     Long id;
 
-    RatingValue value;
+    int value;
 
-    Date dateRated;
+    String dateRated;
 
     Recipe associatedRecipe;
 

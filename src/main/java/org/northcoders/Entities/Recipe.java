@@ -1,12 +1,14 @@
 package org.northcoders.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import org.jetbrains.annotations.NotNull;
 import org.northcoders.Entities.Enums.Difficulty;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Set;
+
+import static jakarta.persistence.FetchType.LAZY;
 
 @Entity
 public class Recipe {
@@ -14,6 +16,7 @@ public class Recipe {
     @GeneratedValue
     Long id;
 
+    @NotNull
     String title;
 
     String description;
@@ -30,15 +33,15 @@ public class Recipe {
 
     Rating rating;
 
-    List<Ingredient> listOfIngredients;
+    Set<Ingredient> listOfIngredients;
 
-    List<Category> listOfCategories;
+    Set<Category> listOfCategories;
 
     User creator;
 
-    Date dateCreated;
+    String dateCreated;
 
-    Date lastModified;
+    String lastModified;
 
     public Recipe() {
     }

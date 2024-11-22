@@ -12,7 +12,7 @@ public class Image {
 
     String fileName;
 
-    Byte[] fileData;
+    String fileData;
 
     Recipe asociatedRecipe;
 
