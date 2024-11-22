@@ -1,8 +1,8 @@
 package org.northcoders;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.northcoders.Entities.*;
 
 import static java.lang.Boolean.TRUE;
 import static org.hibernate.cfg.JdbcSettings.*;
@@ -18,6 +18,14 @@ public class Database {
                 .setProperty(SHOW_SQL, TRUE.toString()) // <-- SQL formatting configuration
                 .setProperty(FORMAT_SQL, TRUE.toString())
                 .setProperty(HIGHLIGHT_SQL, TRUE.toString())
+                .addAnnotatedClass(Category.class)
+                .addAnnotatedClass(Tag.class)
+                .addAnnotatedClass(Ingredient.class)
+                .addAnnotatedClass(Person.class)
+                .addAnnotatedClass(Recipe.class)
+                .addAnnotatedClass(Rating.class)
+                .addAnnotatedClass(Image.class)
+                .addAnnotatedClass(Comment.class)
                 .buildSessionFactory();
 
         return sessionFactory;
