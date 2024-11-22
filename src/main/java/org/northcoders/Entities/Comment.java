@@ -4,18 +4,22 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 
+import java.util.Date;
+
 @Entity
-public class Image {
+public class Comment {
     @Id
     @GeneratedValue
     Long id;
 
-    String fileName;
+    String text;
 
-    Byte[] fileData;
+    Date datePosted;
 
-    Recipe asociatedRecipe;
+    User author;
 
-    public Image() {
+    Recipe associatedRecipe;
+
+    public Comment() {
     }
 }
