@@ -6,6 +6,8 @@ import org.northcoders.Entities.Enums.Difficulty;
 
 import java.util.Set;
 
+import static jakarta.persistence.FetchType.LAZY;
+
 @Entity
 public class Recipe {
     @Id
@@ -26,12 +28,16 @@ public class Recipe {
 
     Difficulty difficultyLevel;
 
-    Rating rating;
+//    //@OneToMany
+//    Rating rating;
 
+    @OneToMany
     Set<Ingredient> listOfIngredients;
 
+    @OneToMany
     Set<Category> listOfCategories;
 
+    @ManyToOne(fetch = LAZY)
     Person creator;
 
     String dateCreated;
