@@ -1,23 +1,62 @@
 package org.northcoders.Entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @Entity
 public class Image {
     @Id
-    @GeneratedValue
-    Long id;
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
+    private Long id;
 
-    String fileName;
+    private String fileName;
 
-    String fileData;
+    @Lob
+    @Column(name = "file_data")
+    byte[] fileData;
 
     @OneToOne
-    Recipe asociatedRecipe;
+    @JoinColumn(name = "recipe_id")
+    private Recipe asociatedRecipe;
 
     public Image() {
+    }
+
+    public Image(Long id, String fileName, byte[] fileData, Recipe asociatedRecipe) {
+        this.id = id;
+        this.fileName = fileName;
+        this.fileData = fileData;
+        this.asociatedRecipe = asociatedRecipe;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public byte[] getFileData() {
+        return fileData;
+    }
+
+    public void setFileData(byte[] fileData) {
+        this.fileData = fileData;
+    }
+
+    public Recipe getAsociatedRecipe() {
+        return asociatedRecipe;
+    }
+
+    public void setAsociatedRecipe(Recipe asociatedRecipe) {
+        this.asociatedRecipe = asociatedRecipe;
     }
 }
