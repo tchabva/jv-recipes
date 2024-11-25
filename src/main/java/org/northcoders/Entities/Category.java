@@ -7,11 +7,14 @@ import static jakarta.persistence.FetchType.LAZY;
 @Entity
 public class Category {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy =  GenerationType.IDENTITY)
     Long id;
 
     String name;
 
     public Category() {
     }
+
+    //TODO Add regular class implements
+
 }
