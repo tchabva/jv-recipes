@@ -3,6 +3,7 @@ package org.northcoders.Entities;
 import jakarta.persistence.*;
 import org.northcoders.Entities.Enums.Role;
 
+import java.time.LocalDate;
 import java.util.Set;
 
 @Table(name = "user_account")
@@ -21,27 +22,27 @@ public class User {
 
     @Enumerated(EnumType.STRING)
     @Column(name = "role")
-    private Set<Role> roles;
+    private Role role;
 
-    private String dateRegistered;
+    private LocalDate dateRegistered;
 
     public User() {
     }
 
-    public User(String username, String email, String password, Set<Role> roles, String dateRegistered) {
+    public User(String username, String email, String password, Role role, LocalDate dateRegistered) {
         this.username = username;
         this.email = email;
         this.password = password;
-        this.roles = roles;
+        this.role = role;
         this.dateRegistered = dateRegistered;
     }
 
-    public String getDateRegistered() {
+    public LocalDate getDateRegistered() {
         return dateRegistered;
     }
 
-    public Set<Role> getRoles() {
-        return roles;
+    public Role getRoles() {
+        return role;
     }
 
     public String getPassword() {
@@ -72,11 +73,11 @@ public class User {
         this.password = password;
     }
 
-    public void setRoles(Set<Role> roles) {
-        this.roles = roles;
+    public void setRoles(Role roles) {
+        this.role = role;
     }
 
-    public void setDateRegistered(String dateRegistered) {
+    public void setDateRegistered(LocalDate dateRegistered) {
         this.dateRegistered = dateRegistered;
     }
 }
