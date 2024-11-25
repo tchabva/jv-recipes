@@ -1,23 +1,32 @@
 package org.northcoders.Entities;
 
 import jakarta.persistence.*;
+import org.northcoders.Entities.Enums.Role;
 
+import java.util.Set;
+
+@Table(name = "user_account")
 @Entity
-public class Person {
+public class User {
     @Id
-    @GeneratedValue
-    Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
-    String username;
+    private String username;
 
-    String email;
+    private String email;
 
-    String password;
+    private String password;
 
-    String role;
 
-    String dateRegistered;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "role")
+    private Set<Role> roles;
 
-    public Person() {
+    private String dateRegistered;
+
+    public User() {
     }
+
+
 }
